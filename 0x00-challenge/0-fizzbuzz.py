@@ -11,19 +11,27 @@ def fizzbuzz(n):
       multiples of five print "Buzz".
     - For numbers which are multiples of both three and five print "FizzBuzz".
     """
+
     if n < 1:
         return
 
+    modulo_list = [
+        (3, "Fizz"),
+        (5, "Buzz")
+    ]
+
     tmp_result = []
-    for i in range(1, n + 1):
-        if (i % 3) == 0 and (i % 5) == 0:
-            tmp_result.append("FizzBuzz")
-        elif (i % 3) == 0:
-            tmp_result.append("Fizz")
-        elif (i % 5) == 0:
-            tmp_result.append("Buzz")
-        else:
+
+    for i in range(1, 101):
+        print_string = ""
+        for mod in modulo_list:
+            if i % mod[0] == 0:
+                print_string += mod[1]
+        if print_string == "":
             tmp_result.append(str(i))
+        else:
+            tmp_result.append(print_string)
+
     print(" ".join(tmp_result))
 
 
