@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 /*
     Print a square with the character #
     
