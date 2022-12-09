@@ -25,7 +25,6 @@ for (let i = 0; i < size; i++) {
     The size of the square must be the first argument 
     of the program.
 */
-
 if (process.argv.length <= 2) {
   process.stderr.write("Missing argument\n");
   process.stderr.write("Usage: ./1-print_square.js <size>\n");
@@ -33,9 +32,11 @@ if (process.argv.length <= 2) {
   process.exit(1);
 }
 
-const size = parseInt(process.argv[2], 10);
-const row = "#".repeat(size);
+size = parseInt(process.argv[2], 10);
 
 for (let i = 0; i < size; i++) {
-  process.stdout.write(row + "\n");
+  for (let j = 0; j < size; j++) {
+    process.stdout.write("#");
+  }
+  process.stdout.write("\n");
 }
